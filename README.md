@@ -1,14 +1,17 @@
-# LiftoffSimulator
-Mods and utilities for using the Liftoff flight sim as a simulator for testing flight control algorithms
+# LiftoffLidar Mod for Windows
+Fork of [Jchisholm204/LiftoffSimulator]https://github.com/Jchisholm204/LiftoffSimulator
 
-The base program contains a test script to read all data out of the Liftoff Simulator.
+THIS MOD IS STILL NOT FUNCTIONAL
+
+This is a mod that creates LiDAR data in liftoff and sends it over a UDP port. It uses BepInEx.
 
 - `lf_telemetry` - Pulls base data out of the liftoff simulator
-- `joystick` - Creates a virtual joystick to send commands to liftoff
+
+This is a simplified version of Jchisholm204's codebase and I really recommend checking his out. It strips out other parts, such as the virtual controller, and translates the LiDAR mod to windows. 
 
 ## Getting Basic Telemetry
 Liftoff can export a lot of data over UDP without any modifications.
-See this [post on how to](https://steamcommunity.com/sharedfiles/filedetails/?id=3160488434).
+See this .
 
 Place the following snippet in `~/.config/unity3d/LuGus Studios/Liftoff/TelemetryConfiguration.json`
 ```json
@@ -27,24 +30,8 @@ Place the following snippet in `~/.config/unity3d/LuGus Studios/Liftoff/Telemetr
 }
 ```
 
-
-## UnoController
-Sample Arduino program that can "act" as the control board
-
-## LidarMod
-A Unity mod that can be injected into the Liftoff game to forward LiDAR data over a UDP port.
-
 ### Building the Mod
-To build the mod, install liftoff and install Microsoft DotNet.
-Then, ensure that the `LiftoffLidar.csproj` file contains the correct `HintPath` references.
-By default, the project expects the game data to live under `/home/jacob/.local/share/Steam/steamapps/common/Liftoff`.
-Ensure that absolute paths are used.
-Microsoft DotNet may struggle to build the project when relative paths are used.
-
-After ensuring the project is setup, build the mod with:
-```
-dotnet build
-```
+The mod still isn't functional.
 
 ### Installing BepInEx
 BepInEx is required to load the mod.
@@ -92,7 +79,5 @@ Finally, set logging to all:
 LogChannels = All
 ```
 ### Installing the Mod
-Copy the mod from the build folder (`LidarMod/LiftoffLidar/bin/Debug/netstandard2.1/LiftoffLidar.dll`)
-to the plugins folder within `BepInEx/plugins`.
-
+----
 
