@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>LiftoffLidar</AssemblyName>
+    <Description>Drone Lidar Mod</Description>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <!-- Exclude generated files from nested or previous project locations. -->
+    <DefaultItemExcludes>$(DefaultItemExcludes);**/bin/**;**/obj/**</DefaultItemExcludes>
+  </PropertyGroup>
+
+  <ItemGroup>
+      <Reference Include="BepInEx">
+          <HintPath>C:/Program Files (x86)/Steam/steamapps/common/Liftoff/BepInEx/core/BepInEx.dll</HintPath>
+          <Private>false</Private>
+      </Reference>
+      <Reference Include="UnityEngine"><HintPath>C:/Program Files (x86)/Steam/steamapps/common/Liftoff/Liftoff_Data/Managed/UnityEngine.dll</HintPath></Reference>
+      <Reference Include="UnityEngine.CoreModule"><HintPath>C:/Program Files (x86)/Steam/steamapps/common/Liftoff/Liftoff_Data/Managed/UnityEngine.CoreModule.dll</HintPath></Reference>
+      <Reference Include="UnityEngine.PhysicsModule"><HintPath>C:/Program Files (x86)/Steam/steamapps/common/Liftoff/Liftoff_Data/Managed/UnityEngine.PhysicsModule.dll</HintPath></Reference>
+  </ItemGroup>
+</Project>
