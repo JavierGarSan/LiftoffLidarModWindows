@@ -26,7 +26,6 @@ namespace LiftoffLidarMod
         // Else it uses a 21x15 grid and 45 misc points. These have been prebaked for speed reasons/lazyness. Sorry.
         private const bool use_jacob_rings = false;
 
-        // Codex code begins here: This should be a list of all the prebaked points
         // Local-space unit directions: +X right, +Y up, +Z forward.
         // Packet float indices match this array. Angles below are yaw/elevation in degrees.
         // Grid: index = row * 21 + column; yaw = -60 + column * 6;
@@ -415,7 +414,6 @@ namespace LiftoffLidarMod
             new Vector3(0.000000000f, -1.000000000f, 0.000000000f), // 359: yaw 0, elevation -90
         };
 
-        // Codex code ends here
 
         // Awake runs once when the mod is loaded
         private void Awake()
@@ -492,7 +490,6 @@ namespace LiftoffLidarMod
             }
             else
             {
-                // Codex code begins here: This should be the casting of every ray in each frame.
                 Quaternion rotation = drone.transform.rotation;
                 for (int i = 0; i < PrebakedRayDirections.Length; i++)
                 {
@@ -502,7 +499,6 @@ namespace LiftoffLidarMod
                         : 50.0f;
                 }
 
-                // Codex code ends here
             }
             byte[] payload = new byte[distances.Length * 4];
             Buffer.BlockCopy(distances, 0, payload, 0, payload.Length);

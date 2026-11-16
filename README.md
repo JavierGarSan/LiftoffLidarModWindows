@@ -1,11 +1,7 @@
 # LiftoffLidar Mod for Windows
 Fork of [Jchisholm204/LiftoffSimulator]https://github.com/Jchisholm204/LiftoffSimulator
 
-THIS MOD IS STILL NOT FUNCTIONAL
-
 This is a mod that creates LiDAR data in liftoff and sends it over a UDP port. It uses BepInEx.
-
-- `lf_telemetry` - Pulls base data out of the liftoff simulator
 
 This is a simplified version of Jchisholm204's codebase and I really recommend checking his out. It strips out other parts, such as the virtual controller, and translates the LiDAR mod to windows. 
 
@@ -31,7 +27,13 @@ Place the following snippet in `~/.config/unity3d/LuGus Studios/Liftoff/Telemetr
 ```
 
 ### Building the Mod
-The mod still isn't functional.
+To build the mod, install liftoff and install Microsoft DotNet. Then, ensure that the LiftoffLidar.csproj file contains the correct HintPath references. By default, the project expects the game data to live under C:/Program Files (x86)/Steam/steamapps/common/Liftoff/. Ensure that absolute paths are used. Microsoft DotNet may struggle to build the project when relative paths are used.
+
+After ensuring the project is setup, build the mod with:
+'''
+dotnet build
+'''
+
 
 ### Installing BepInEx
 BepInEx is required to load the mod.
@@ -79,5 +81,5 @@ Finally, set logging to all:
 LogChannels = All
 ```
 ### Installing the Mod
-----
+Copy the mod from the build folder (LidarMod/LiftoffLidar/bin/Debug/netstandard2.1/LiftoffLidar.dll) to the plugins folder within BepInEx/plugins.
 
